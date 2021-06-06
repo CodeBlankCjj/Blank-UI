@@ -1,3 +1,3 @@
-# blank - 一个 Vue UI 组件
+# Blank - 一个 Vue UI 组件
 
 作者 CodeBlankCjj
