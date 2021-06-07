@@ -2,7 +2,7 @@
   <button class="g-button" :class="{[`icon-${iconPosition}`]: true}" @click="$emit('click')">
     <g-icon class="icon" v-if="icon && !loading" :name="icon"></g-icon>
     <g-icon class="loading icon" v-if="loading" name="loading"></g-icon>
-    <div  class="content">
+    <div class="content">
       <slot></slot>
     </div>
   </button>
@@ -19,7 +19,7 @@ export default {
         return value === 'left' || value === 'right';
       }
     },
-    loading:{
+    loading: {
       type: Boolean,
       default: false
     }
@@ -28,8 +28,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 @keyframes spin {
-  0%{ transform: rotate(0deg)}
-  100%{ transform: rotate(360deg)}
+  0% { transform: rotate(0deg)}
+  100% { transform: rotate(360deg)}
 }
 .g-button {
   font-size: var(--font-size);
@@ -42,41 +42,33 @@ export default {
   justify-content: center;
   align-items: center;
   vertical-align: middle;
-
   &:hover {
     border-color: var(--border-color);
   }
-
   &:active {
     background-color: var(--button-active-bg);
   }
-
   &:focus {
     outline: none;
   }
-
   > .icon {
     order: 1;
     margin-right: .1em;
   }
-
   > .content {
     order: 2;
   }
-
   &.icon-right {
     > .icon {
       order: 2;
       margin-left: 0;
       margin-right: .1em;
     }
-
     > .content {
       order: 1;
     }
   }
-
-  .loading{
+  .loading {
     animation: spin 2s infinite linear;
   }
 }
